@@ -1,14 +1,16 @@
 # Alpha-LMS-System
+ 
  <hr />
+ 
 ## Features
--Login with Authentication
--User & Admin dashboard
--Rendering user specific data
--Permission management
--Add/Edit/Delete data
--View book collection
--Borrow & Issue requests
--Recommend Books
+- Login with Authentication
+- User & Admin dashboard
+- Rendering user specific data
+- Permission management
+- Add/Edit/Delete data
+- View book collection
+- Borrow & Issue requests
+- Recommend Books
 
 ![image](https://user-images.githubusercontent.com/80235375/175088001-5dadf48b-20ec-44af-92fc-13f487d0c568.png)
 
