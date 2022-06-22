@@ -1,0 +1,21 @@
+{% extends 'library/adminbase.html' %}{% load static %}
+<br />
+{% block title %} Send Messages {% endblock %}
+<br />
+{% block content %}
+
+<div class="form-container">
+  <h3 class="header3form">POST A MESSAGE</h3>
+  <form class="form-styles" action="" method="POST">
+    {% csrf_token %} {{form.as_p}}
+    <button tyle="submit" name="send" class="btn send">Send</button>
+    <div class="form-image">
+      <img src="{% static 'images/message.png' %}" alt="" />
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+<!--<h1 class="mb-4">Send a Message</h1>
+<a href="/logout/"><button class="btn btn-primary">Logout</button></a>
+<a href="/admin_portal/"><button class="btn btn-secondary">Go back</button></a>-->

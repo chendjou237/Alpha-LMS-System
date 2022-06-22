@@ -1,0 +1,41 @@
+{% extends 'library/userbase.html' %}
+
+<br />
+{% block title %} Messages View {% endblock %}
+<br />
+{% block content %}
+
+<div class="message-container">
+  <h3 class="header3">Messages</h3>
+  <div class="message-list">
+    {% if messages %}
+    <br />
+    {% for i in messages %}
+    <div class="message-item">
+      {% if i.type == "warning" %}
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+
+      {% elif i.type == "info" %}
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+
+      {% elif i.type == "approval" %}
+      <i class="fa fa-check" aria-hidden="true"></i>
+
+      {% endif %}
+      <p>{{i.message}}</p>
+      <p class="time-stamp">{{i.time}}</p>
+    </div>
+    {% endfor %}
+    <br />
+    {% else %}
+
+    <p class="not_present">No messages to view!</p>
+
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
+
+<!--<a href="/logout/"><button class="btn btn-primary">Logout</button></a>
+<a href="/user/"><button class="btn btn-secondary">Go back</button></a>-->

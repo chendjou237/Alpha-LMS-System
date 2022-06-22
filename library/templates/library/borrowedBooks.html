@@ -1,0 +1,71 @@
+{% extends 'library/adminbase.html' %}
+<br />
+{% block title %} Borrowed Books {% endblock %}
+<br />
+{% block content %}
+
+<div class="table-container">
+  <br />
+  <h3 class="header3">Borrowed</h3>
+  {% if issued_books %}
+  <br />
+
+  <div class="book_list">
+    <table class="table-styles">
+      <tr>
+        <th>ID</th>
+        <th>Roll No.</th>
+        <th>Title</th>
+        <th>Issue Date</th>
+        <th>Due Date</th>
+        {% comment %}
+        <th>Options</th>
+        {% endcomment %}
+      </tr>
+      {% for i in issued_books %}
+      <tr>
+        <td>{{i.book.id}}</td>
+        <td>{{i.user.username}}</td>
+        <td>{{i.book.title}}</td>
+        <td>{{i.issued_at}}</td>
+        <td>{{i.due_at}}</td>
+        {% comment %}
+        <td>
+          <form action="" method="post">
+            {% csrf_token %}
+            <input
+              type="submit"
+              value="Renew"
+              name="{{i.book.id}}"
+              class="btn btn-info"
+            />
+          </form>
+          <form action="" method="post">
+            {% csrf_token %}
+            <input
+              type="submit"
+              value="Return"
+              name="{{i.book.id}}"
+              class="btn btn-success"
+            />
+          </form>
+        </td>
+        {% endcomment %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <br />
+  {% else %}
+
+  <p class="not_present">
+    No books issues currently!
+    <a href="/admin/books/"
+      ><button class="btn options primeblue">Add Books</button></a
+    >
+  </p>
+
+  {% endif %}
+</div>
+
+{% endblock %}

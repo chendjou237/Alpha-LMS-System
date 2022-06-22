@@ -1,0 +1,52 @@
+{% extends 'library/adminbase.html' %}
+<br />
+{% block title %} Renew Books {% endblock %}
+<br />
+{% block content %}
+<div class="table-container">
+  <br />
+  <h3 class="header3">Renew Books</h3>
+  {% if renew_req %}
+
+  <div class="book_list">
+    <table class="table-styles">
+      <tr>
+        <th>ID</th>
+        <th>Roll no.</th>
+        <th>Title</th>
+        <th>Due Date</th>
+        <th>Renewal count</th>
+        <th>Options</th>
+      </tr>
+      {% for rr in renew_req %}
+
+      <tr>
+        <td>{{rr.issue.book.id}}</td>
+        <td>{{rr.issue.user.username}}</td>
+        <td>{{rr.issue.book.title}}</td>
+        <td>{{rr.issue.due_at}}</td>
+        <td>{{rr.issue.renew_count}}</td>
+        <td class="flex">
+          {% if rr.issue.renew_count > 0 %}
+          <form action="" method="post">
+            {% csrf_token %}
+            <input
+              type="submit"
+              value="Renew"
+              name="{{rr.issue.book.id}}|{{rr.issue.user.username}}"
+              class="btn options primeblue"
+            />
+          </form>
+          {% else %}
+          <p>Cannot proeceed!</p>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% else %}
+  <p class="not_present">No Pending Renewal Requests !</p>
+  {% endif %}
+</div>
+{% endblock %}

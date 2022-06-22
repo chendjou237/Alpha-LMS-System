@@ -1,0 +1,16 @@
+{% extends 'library/adminbase.html' %}{% load static %}
+<br />
+{% block title %} Edit Student Details {% endblock %}
+<br />
+{% block content %}
+<div class="form-container">
+  <h3 class="header3form">EDIT STUDENT DETAILS</h3>
+  <form class="form-styles" action="" method="POST">
+    {% csrf_token %} {{form.as_p}}
+    <button tyle="submit" name="send" class="btn send">Send</button>
+    <div class="form-image">
+      <img src="{% static 'images/add_book.png' %}" alt="" />
+    </div>
+  </form>
+</div>
+{% endblock %}

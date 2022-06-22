@@ -1,0 +1,79 @@
+{% extends 'library/adminbase.html' %}
+<br />
+{% block title %}Student List {% endblock %}
+<br />
+{% block content %}
+
+<div class="table-container">
+  <br />
+  <h3 class="header3">Student List</h3>
+  {% if students %}
+  <br />
+
+  <div class="book_list">
+    <table class="table-styles">
+      <tr>
+        <th>Roll no.</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Books Borrowed</th>
+        <th>Date of Joining</th>
+        <th>Options</th>
+      </tr>
+      {% for s in students %}
+
+      <tr>
+        <td>{{s.roll_no}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.branch}}</td>
+        <td>{{s.books_borrowed_count}}</td>
+        <td>{{s.date_of_joining}}</td>
+        <td class="option-container">
+          <a href="edit/{{s.roll_no}}"
+            ><button class="btn options primeblue">Edit</button></a
+          >
+          <button id="delete" class="btn options gray" onclick="showPopup()">
+            Delete
+          </button>
+        </td>
+      </tr>
+      <div class="popup-wrapper" id="popup">
+        <div class="popup-container">
+          <div class="icon-div">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          </div>
+          <h3>Are You Sure?</h3>
+          <p>Please ensure and confirm!</p>
+          <div class="option-container">
+            <button
+              class="btn popup cancel"
+              id="popupcancel"
+              onclick="closePopup()"
+            >
+              Cancel
+            </button>
+            <form action="" method="post">
+              {% csrf_token %}
+              <input
+                type="submit"
+                value="Delete"
+                name="{{s.roll_no}}"
+                class="btn popup delete"
+              />
+            </form>
+            <!--<button class="btn popup delete">Delete</button>-->
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% else %} {% endif %}
+</div>
+
+{% endblock %}
+
+<!--<h1 class="mb-4">Student List</h1>
+<a href="/logout/"><button class="btn btn-primary">Logout</button></a>
+<a href="/admin_portal/"><button class="btn btn-secondary">Go back</button></a>-->

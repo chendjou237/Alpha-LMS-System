@@ -1,0 +1,66 @@
+{% extends 'library/userbase.html' %}
+<br />
+{% block title %} Returned Books {% endblock %}
+<br />
+{% block content %}
+
+<div class="table-container">
+  <br />
+  <h3 class="header3">Returned</h3>
+  {% if returned %}
+
+  <div class="book_list">
+    <table class="table-styles">
+      <tr>
+        <th>Book Id</th>
+        <th>Book Title</th>
+        <th>Returned Date</th>
+        <th>Fine</th>
+
+        {% comment %}
+        <th>Options</th>
+        {% endcomment %}
+      </tr>
+      {% for i in returned %}
+      <tr>
+        <td>{{i.book_id}}</td>
+        <td>{{i.book_title}}</td>
+
+        <td>{{i.returned_date}}</td>
+        <td>{% if i.fine > 0 %} {{i.fine}} {% else %} - {% endif %}</td>
+        {% comment %}
+        <td>
+          <a href="renue/{{i.book.id}}"
+            ><button class="btn btn-info">Renew</button></a
+          >
+          <form action="" method="post">
+            {% csrf_token %}
+            <input
+              type="submit"
+              value="Return"
+              name="{{i.book.id}}"
+              class="btn btn-success"
+            />
+          </form>
+          <a href="return/{{i.book.id}}"
+            ><button class="btn btn-success">Return</button></a
+          >
+        </td>
+        {% endcomment %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <br />
+  {% else %}
+
+  <p class="not_present">
+    No books returned yet!
+    <a href="/user/books/" style="text-decoration: none; margin-top: 20px"
+      ><button class="btn options primeblue">Return Books</button></a
+    >
+  </p>
+
+  {% endif %}
+</div>
+{% endblock %}

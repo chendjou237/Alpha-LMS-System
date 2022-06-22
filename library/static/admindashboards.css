@@ -1,0 +1,160 @@
+/* stats */
+
+.profile-feature-card {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 20%;
+  margin: 0px 20px;
+  background: #ffffff;
+  box-shadow: 2px 2px 20px rgba(116, 116, 116, 0.2);
+  border-radius: 20px;
+  position: relative;
+}
+.profile-feature-card:hover {
+  box-shadow: 4px 4px 20px rgba(116, 116, 116, 0.3);
+}
+.icon-div {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-div i {
+  font-size: 18px;
+}
+.view_more {
+  position: absolute;
+  right: -60px;
+  top: 27px;
+  padding: 5px 10px;
+  z-index: 3;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  color: #838383;
+  background: #fff;
+  border-top-right-radius: 10px;
+  box-shadow: 2px 2px 20px rgba(116, 116, 116, 0.2);
+  cursor: pointer;
+  text-decoration: none;
+  display: none;
+}
+.view_more:hover {
+  box-shadow: 4px 4px 20px rgba(116, 116, 116, 0.3);
+}
+.fa-ellipsis-v {
+  font-size: 18px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #a8a8a8;
+  cursor: pointer;
+}
+
+.view_more.active {
+  display: block;
+}
+
+.count {
+  font-family: "Lato", sans-serif;
+  color: #2c2e38;
+  font-weight: 700;
+  font-size: 36px;
+  margin-top: 10px;
+}
+.card-category {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 13px;
+}
+.blue {
+  color: #25b0eb;
+}
+.blue .icon-div {
+  background: rgba(46, 169, 238, 0.15);
+}
+.pink {
+  color: #ff6582;
+}
+.pink .icon-div {
+  background: rgba(255, 101, 132, 0.15);
+}
+
+.green {
+  color: #178c38;
+}
+.green .icon-div {
+  background: rgba(23, 140, 56, 0.15);
+}
+
+.yellow {
+  color: #ffb800;
+}
+
+.yellow .icon-div {
+  background: rgba(255, 184, 0, 0.15);
+}
+
+/* weekly due */
+
+.weekly-due {
+  margin: 30px 15px;
+  width: 450px;
+  height: 420px;
+  background: linear-gradient(101.81deg, #ffffff 0%, #ffffff 98.15%);
+  box-shadow: 2px 2px 20px rgba(116, 116, 116, 0.12);
+  border-radius: 20px;
+  flex-direction: column;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.weekly-header {
+  background-color: white;
+  position: sticky;
+  letter-spacing: 0.03em;
+  padding: 10px 0px 5px;
+  top: 0px;
+  z-index: 1;
+  box-shadow: 2px 2px 20px rgba(116, 116, 116, 0.12);
+}
+.weekly-header h3 {
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  color: #2c2e38;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 2px solid #25b0eb;
+  width: fit-content;
+}
+.weekly-table {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 10px;
+  margin: 20px auto;
+  overflow: scroll;
+}
+
+.weekly-table tr {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+.weekly-table tr th {
+  background: #1e3753;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+  color: #ffffff;
+  height: 30px;
+  font-weight: 500;
+}
+.weekly-table tr td {
+  color: #494949;
+  font-size: 12px;
+  height: 30px;
+}

@@ -1,0 +1,53 @@
+{% extends 'library/adminbase.html' %}{% load static %}
+<br />
+{% block title %} Book Detail {% endblock %}
+<br />
+{% block content %}
+<div class="detail-container">
+  <h3 class="header3">Book Detail</h3>
+  <div class="detail-list">
+    <div class="detail-wrapper">
+      <div class="detail_div" style="display: flex">
+        <p class="title">Title:</p>
+        <p class="value">{{bookdetail.title}}</p>
+      </div>
+      <div class="detail_div" style="display: flex">
+        <p class="title">Author:</p>
+        <p class="value">{{bookdetail.author}}</p>
+      </div>
+      <div class="detail_div" style="display: flex">
+        <p class="title">Publisher:</p>
+        <p class="value">{{bookdetail.publisher}}</p>
+      </div>
+      <div class="detail_div" style="display: flex">
+        <p class="title">Year:</p>
+        <p class="value">{{bookdetail.year}}</p>
+      </div>
+      <div class="detail_div" style="display: flex">
+        <p class="title">No. of copies:</p>
+        <p class="value">{{bookdetail.no_of_copies}}</p>
+      </div>
+      <div class="detail_div" style="display: flex">
+        <p class="title">Available:</p>
+        <p class="value">{{bookdetail.available}}</p>
+      </div>
+      <div class="detail_div" style="display: flex">
+        <p class="title">Cost:</p>
+        <p class="value">Rs. {{bookdetail.cost}}</p>
+      </div>
+    </div>
+    <div class="detail-image">
+      {% if bookdetail.image %}
+      <img src="/media/{{bookdetail.image}}" alt="image" />
+      {% else %}
+      <img src="{% static 'images/image_not_available.png' %}" alt="image" />
+      {% endif %}
+    </div>
+  </div>
+
+  <a href="/{{permission}}/books/" style="text-decoration: none"
+    ><button class="btn options primeblue">Go back</button></a
+  >
+</div>
+
+{% endblock %}

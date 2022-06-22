@@ -1,0 +1,58 @@
+{% extends 'library/adminbase.html' %}
+<br />
+{% block title %} Issue Books {% endblock %}
+<br />
+{% block content %}
+<div class="table-container">
+  <br />
+  <h3 class="header3">Issue Books</h3>
+  {% if borrow_request %}
+
+  <div class="book_list">
+    <table class="table-styles">
+      <tr>
+        <th>ID</th>
+        <th>Roll no.</th>
+        <th>Title</th>
+        <th>Availability</th>
+        <th>Options</th>
+      </tr>
+      {% for br in borrow_request %}
+
+      <tr>
+        <td>{{br.book.id}}</td>
+        <td>{{br.user.username}}</td>
+        <td>{{br.book.title}}</td>
+        <td>{{br.book.available}}</td>
+        <td class="flex">
+          {% if br.book.available > 0 %}
+          <form action="" method="post">
+            {% csrf_token %}
+            <input
+              type="submit"
+              value="Issue"
+              name="{{br.book.id}}|{{br.user.username}}"
+              class="btn options issue"
+            />
+          </form>
+          {% else %}
+          <p>Out Of Stock</p>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% else %}
+
+  <p class="not_present">No borrow requests!</p>
+
+  {% endif %}
+</div>
+{% endblock %}
+
+<!--<h1 class="mb-4">Issue Book Request</h1>
+<a href="/logout/"><button class="btn btn-primary">Logout</button></a>
+<a href="/admin_portal/"><button class="btn btn-secondary">Go back</button></a>
+-->

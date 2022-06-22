@@ -1,0 +1,62 @@
+{% extends 'library/userbase.html' %}
+<br />
+{% block title %} Books View {% endblock %}
+<br />
+{% block content %}
+<br />
+<div class="table-container">
+  <br />
+  <h3 class="header3">Collections</h3>
+
+  <div class="book_list">
+    <table class="table-styles">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Availability</th>
+        <th>Options</th>
+      </tr>
+      {% for book in books %}
+
+      <tr>
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        {% if book.available > 0 %}
+        <td><p class="btn availability available">Available</p></td>
+        {% else %}
+        <td><p class="btn availability out-of-stock">Out of stock</p></td>
+        {% endif %}
+        <td class="option-container">
+          <!--<a href="details/{{book.id}}">
+          <button class="btn options outline">Details</button>
+          </a>-->
+          {% if book.id in borrow_list %}
+          <p class="btn options yellowishorange">Requested</p>
+
+          {% elif book.id in issue_list %}
+          <p class="btn options gray">Issued</p>
+
+          {% else %} {% if book.available > 0 %}
+          <form action="" method="post">
+            {% csrf_token %}
+            <input
+              type="submit"
+              value="Borrow"
+              name="{{book.id}}"
+              class="btn options primeblue"
+            />
+          </form>
+          {% else %}
+          <button class="btn options outline" style="cursor: default">
+            Blocked
+          </button>
+          {% endif %} {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

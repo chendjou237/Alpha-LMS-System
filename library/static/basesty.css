@@ -1,0 +1,239 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.content {
+  display: flex;
+  background: linear-gradient(106.61deg, #eaeef8 0.55%, #ffffff 99.64%);
+  position: relative;
+  padding-left: 220px;
+  min-height: calc(100vh - 60px);
+}
+
+/* profile */
+
+.profile-container {
+  width: calc(100vw - 220px);
+  height: calc(100vh - 60px);
+  padding: 45px;
+}
+
+.profile-features {
+  display: flex;
+}
+
+/* header */
+.header3 {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: #424242;
+  margin-top: 30px;
+}
+.header3form {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: #424242;
+  margin-top: 0px;
+}
+
+/* table */
+.table-styles {
+  width: 100%;
+  border-radius: 20px;
+  font-family: "Poppins";
+  background: white;
+}
+
+.table-styles tr {
+  height: 45px;
+}
+.table-styles tr th {
+  background: #3d475b;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+.table-styles tr td {
+  font-weight: 500;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: #808080;
+}
+.table-styles tr td a {
+  text-decoration: none;
+}
+
+/* button */
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+}
+
+/* availability */
+.availability {
+  margin: 0 auto;
+  cursor: default;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  width: 140px;
+  color: white;
+  border-radius: 30px;
+}
+.available {
+  height: 30px;
+  background: #1ce0ed;
+}
+.out-of-stock {
+  height: 30px;
+  background: #ffc6a6;
+}
+/* options */
+.options {
+  width: 110px;
+  height: 32px;
+  font-weight: 500;
+}
+.primeblue {
+  background: #2595d3;
+  color: white;
+}
+.yellowishorange {
+  background: #ffb800;
+  color: white;
+}
+.gray {
+  background: #cdcdcd;
+  color: #808080;
+}
+.outline {
+  border: 1px solid #808080;
+  color: #808080;
+  background-color: white;
+}
+.approve {
+  background: #2f4389;
+  color: white;
+}
+.issue {
+  background: #178c38;
+  color: white;
+}
+/* popup */
+.popup {
+  width: 70px;
+  height: 32px;
+  font-weight: 500;
+}
+.cancel {
+  background: #808080;
+  color: white;
+}
+.delete {
+  background: #dd5959;
+  color: white;
+}
+
+/* send */
+
+.send {
+  height: 45px;
+  background: #1ce0ed;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  width: 180px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+/* form */
+
+.form-styles {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(101.81deg, #f0f4ff 0%, #fafbff 98.15%);
+  box-shadow: 2px 2px 20px rgba(116, 116, 116, 0.12);
+  border-radius: 20px;
+  padding: 45px;
+  margin: 10px 0px 0px;
+  position: relative;
+}
+.form-styles p {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+.form-styles p label {
+  color: #505e79;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+.form-styles p input,
+.form-styles p select {
+  color: #505e79;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  background: #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+}
+.form-styles p select option {
+  background: #ffffff;
+  padding: 10px 20px;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  font-family: "Poppins", sans-serif;
+}
+.form-image {
+  position: absolute;
+  right: 180px;
+  width: 325px;
+  height: 250px;
+  top: 80px;
+}
+
+.form-image img {
+  width: 110%;
+  height: 110%;
+}
+/* flex */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not_present {
+  width: 90%;
+  background: #ffffff;
+  box-shadow: 2px 2px 20px rgba(116, 116, 116, 0.12);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  color: #505e79;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  height: 250px;
+}

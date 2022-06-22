@@ -1,0 +1,17 @@
+{% extends 'library/adminbase.html' %}
+<br />
+{% block title %} Deletion Confirmation {% endblock %}
+<br />
+{% block content %}
+<div class="popup-container">
+  <div class="icon-div">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+  </div>
+  <h3>Are You Sure?</h3>
+  <p>Please ensure and confirm!</p>
+  <div class="option-container">
+    <button class="btn">Cancel</button>
+    <button class="btn">Delete</button>
+  </div>
+</div>
+{% endblock %}

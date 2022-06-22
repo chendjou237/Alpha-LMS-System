@@ -1,0 +1,12 @@
+{% extends 'library/errorbase.html' %}{% load static %}
+<br />
+{% block title %} 404 error {% endblock %}
+<br />
+{% block content %}
+<div class="error-container">
+  <div class="error-img">
+    <img src="{% static 'images/404.png' %}" alt="" />
+  </div>
+</div>
+
+{% endblock%}

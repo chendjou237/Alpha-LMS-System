@@ -1,0 +1,113 @@
+{% extends 'library/adminbase.html' %}
+<br />
+{% block title %} AdminDashboard {% endblock %}
+<br />
+{% block content %}
+<div class="profile-container">
+  <div class="profile-features">
+    <div class="profile-feature-card blue">
+      <i class="fa fa-ellipsis-v" id="view_select1" onclick="toggle()" aria-hidden="true"></i>
+      <a href="/admin_portal/books/" id="view_more1" class="view_more"><p >View More</p></a>
+      <div class="icon-div">
+        <i class="fa fa-book" aria-hidden="true"></i>
+      </div>
+      <h3 class="count">{{bookcount}}</h3>
+      <p class="card-category">BOOKS</p>
+    </div>
+    <div class="profile-feature-card pink">
+      <i class="fa fa-ellipsis-v" id="view_select2" onclick="toggle2()" aria-hidden="true"></i>
+      <a href="/admin_portal/student_list/" id="view_more2" class="view_more"><p >View More</p></a>
+      <div class="icon-div">
+        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+      </div>
+      <h3 class="count">{{studentcount}}</h3>
+      <p class="card-category">STUDENTS</p>
+    </div>
+    <div class="profile-feature-card green">
+      <div class="icon-div">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      </div>
+      <h3 class="count">8</h3>
+      <p class="card-category">ISSUE REQUESTS</p>
+    </div>
+    <div class="profile-feature-card yellow">
+      <div class="icon-div">
+        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+      </div>
+      <h3 class="count">9</h3>
+      <p class="card-category">RENEW REQUESTS</p>
+    </div>
+  </div>
+  <div class="profile-features">
+      <div class="weekly-due">
+        <div class="weekly-header">
+          <h3>Weekly Due</h3>
+
+        </div>
+        <table class="weekly-table">
+          <tr>
+            <th>ID</td>
+            <th>Roll No</th>
+            <th>Title</td>
+            <th>Due Date</td>
+          </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BKT0003</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BKT0003</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BKT0003</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BKT0003</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BKT0003</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BKT0003</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BCE0122</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BCE0122</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+            <tr>
+              <td>B13682</td>
+              <td>20BCE0122</td>
+              <td>Jules Vernes</td>
+              <td>23/05/2022</td>
+            </tr>
+
+        </table>
+      </div>
+  </div>
+</div>
+{% endblock %}

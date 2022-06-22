@@ -1,0 +1,21 @@
+{% extends "loginbase.html "%}
+<br />
+{% block title %} Create an Account {% endblock%}
+<br />
+{% load crispy_forms_tags %}
+<br />
+
+{% block content %}
+<div class="login-form-container">
+  <h3 class="header3form">Register</h3>
+
+  <form method="POST" class="form-styles">
+    {% csrf_token %} {{form.as_p}}
+    <button type="submit" class="btn options primeblue">Register</button>
+    <div class="register">
+      Already have an account? Login in <a href="/"> here</a>
+    </div>
+  </form>
+</div>
+
+{% endblock%}
