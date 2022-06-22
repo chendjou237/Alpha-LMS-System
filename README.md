@@ -1,6 +1,5 @@
 # Alpha-LMS-System
  
- <hr />
  
 ## Features
 - Login with Authentication
