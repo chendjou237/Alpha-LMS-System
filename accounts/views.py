@@ -1,32 +1,33 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from library.views import *
 from .forms import LoginForm, RegisterForm
-from .models import *
+from .models import studentProfile
+from library.views import *
+
 
 
 def register(response):
     if response.method == "POST":
-        # form = UserCreationForm(response.POST)
-        # print(form)
-        roll_no = response.POST["username"]
-        email = response.POST["email"]
-        name = response.POST["name"]
-        branch = response.POST["branch"]
+        form = RegisterForm(response.POST)  # Use your custom RegisterForm here
         if form.is_valid():
+            roll_no = form.cleaned_data["username"]
+            email = form.cleaned_data["email"]
+            name = form.cleaned_data["name"]
+            branch = form.cleaned_data["branch"]
 
             t = studentProfile.objects.create(
-                roll_no=roll_no, email=email, name=name, branch=branch)
+                roll_no=roll_no, email=email, name=name, branch=branch, books_borrowed_count=0,
+            )
             t.save()
-            print(t)
             form.save()
-            return redirect("user_login")
+
         return redirect("user_login")
+
     else:
         form = RegisterForm()
+
     return render(response, "accounts/register.html", {"form": form})
 
 

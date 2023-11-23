@@ -18,3 +18,12 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'library.views.not_found'
 handler500 = 'library.views.server_error'
+
+# urls.py
+from django.urls import path
+from .views import dashboard
+
+urlpatterns = [
+    path('dashboard/', dashboard, name='dashboard'),
+    # Add other URLs as needed
+]

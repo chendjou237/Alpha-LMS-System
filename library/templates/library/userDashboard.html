@@ -1,137 +1,74 @@
-{% extends 'library/userbase.html' %} {% load static %}
-<br />
+{% extends 'library/userbase.html' %}
+{% load static %}
+
 {% block title %} UserDashboard {% endblock %}
-<br />
+
 {% block content %}
-<br />
 <div class="profile-container">
-  <!-- top container profile page -->
-  <div class="profile-features">
-    <div class="welcome-container">
-      <h2>Welcome back {{student.name}} !</h2>
-      <p class="quote">
-        Everything you need for better future and success has already been
-        written. And guess what? All you have to do is go to the library.
-      </p>
-      <p class="author">Henry Federic Amiel</p>
-      <div class="welcome-img">
-        <img src="{% static 'images/welcome.png' %}" alt="" />
-      </div>
-    </div>
-    <div class="weekly-due">
-      <div class="calendar-div">
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-      </div>
-      <h3>Weekly Due</h3>
-      <table class="weekly-table">
-        <tr>
-          <th>ID</td>
-          <th>Title</td>
-          <th>Due Date</td>
-        </tr>
+    <!-- top container profile page -->
+    <div class="profile-features">
+        <div class="welcome-container">
+            <h2>Welcome back {{student.name}} !</h2>
+            <p class="quote">
+                Everything you need for better future and success has already been
+                written. And guess what? All you have to do is go to the library.
+            </p>
+            <p class="author">Henry Federic Amiel</p>
+            <div class="welcome-img">
+                <img src="{% static 'images/welcome.png' %}" alt="" />
+            </div>
+        </div>
+        <div class="weekly-due">
+            <div class="calendar-div">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+            </div>
+            <h3>Weekly Due</h3>
+            <table class="weekly-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                </tr>
 
-        <tr>
-          <td>B13682</td>
-          <td>Jules Vernes</td>
-          <td>23/05/2022</td>
-        </tr>
-        <tr>
-          <td>B13682</td>
-          <td>Jules Vernes</td>
-          <td>23/05/2022</td>
-        </tr>
-      </table>
+                <tr>
+                    <td>B13682</td>
+                    <td>Jules Vernes</td>
+                    <td>23/05/2022</td>
+                </tr>
+                <tr>
+                    <td>B13682</td>
+                    <td>Jules Vernes</td>
+                    <td>23/05/2022</td>
+                </tr>
+            </table>
+        </div>
+        <div class="book-stats">
+
+        </div>
     </div>
-    <div class="book-stats">
-      
-    </div>
-  </div>
-  <div class="new-releases">
-    <h3>New Releases</h3>
-    <div class="new-releases-list">
-      <div class="new-release-item">
-        <div class="new-release-item-img">
-          <img src="{% static 'images/b1.jpg'%}" alt="">
+    <div class="new-releases">
+        <h3>New Releases</h3>
+        <div class="new-releases-list">
+            <!-- Add your new release items here -->
+
         </div>
-        <h4 class="new-release-item-title">
-          An Immense World
-        </h4>
-        <p class="new-release-item-author">
-          Ed Young
-        </p>
-      </div>
-      <div class="new-release-item">
-        <div class="new-release-item-img">
-          <img src="{% static 'images/b2.png'%}" alt="">
-        </div>
-        <h4 class="new-release-item-title">
-          The good servant
-        </h4>
-        <p class="new-release-item-author">
-          Fern Britton
-        </p>
-      </div>
-      <div class="new-release-item">
-        <div class="new-release-item-img">
-          <img src="{% static 'images/b1.jpg'%}" alt="">
-        </div>
-        <h4 class="new-release-item-title">
-          An Immense World
-        </h4>
-        <p class="new-release-item-author">
-          Ed Young
-        </p>
-      </div>
-      <div class="new-release-item">
-        <div class="new-release-item-img">
-          <img src="{% static 'images/b1.jpg'%}" alt="">
-        </div>
-        <h4 class="new-release-item-title">
-          An Immense World
-        </h4>
-        <p class="new-release-item-author">
-          Ed Young
-        </p>
-      </div>
-      <div class="new-release-item">
-        <div class="new-release-item-img">
-          <img src="{% static 'images/b1.jpg'%}" alt="">
-        </div>
-        <h4 class="new-release-item-title">
-          An Immense World
-        </h4>
-        <p class="new-release-item-author">
-          Ed Young
-        </p>
-      </div>
-      <div class="new-release-item">
-        <div class="new-release-item-img">
-          <img src="{% static 'images/b2.png'%}" alt="">
-        </div>
-        <h4 class="new-release-item-title">
-          An Immense World
-        </h4>
-        <p class="new-release-item-author">
-          Ed Young
-        </p>
-      </div>
-      <div class="new-release-item">
-        <div class="new-release-item-img">
-          <img src="{% static 'images/b1.jpg'%}" alt="">
-        </div>
-        <h4 class="new-release-item-title">
-          An Immense World
-        </h4>
-        <p class="new-release-item-author">
-          Ed Young
-        </p>
-      </div>
     </div>
 
-  </div>
+    <h1>Dashboard</h1>
 
-  <!-- <p>Name: {{student.name}}</p>
-  <p>Roll No: {{student.roll_no}}</p>
-  <p>Email: {{student.email}}</p> -->
+    <form id="searchForm">
+        <label for="searchQuery">Search:</label>
+        <input type="text" id="searchQuery" name="q" placeholder="Enter your search query">
+        <button type="button" onclick="searchGoogle()">Search</button>
+    </form>
+
+    <script>
+        function searchGoogle() {
+            var searchQuery = document.getElementById("searchQuery").value;
+            var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchQuery);
+            window.location.href = googleSearchUrl;
+        }
+    </script>
 </div>
 {% endblock %}
+
